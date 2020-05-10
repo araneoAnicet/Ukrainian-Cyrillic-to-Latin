@@ -88,10 +88,8 @@ function cyrillicToLatin(ukrainianText) {
             }
         } else if (alphabet.ioting.lettersWhichCanBeIoted.includes(ukrainianText[i])) {
             if (previousLetterIsIoting) {
-                console.log(`Current letter is ${ukrainianText[i]} and prev letter is ioting, current index is ${i}`)
                 resultText += alphabet.ioting.twoLetters[ukrainianText[i]].ioted
             } else {
-                console.log(`Current letter is ${ukrainianText[i]} and prev letter is NOT ioting, current index is ${i}`)
                 resultText += alphabet.ioting.twoLetters[ukrainianText[i]].notIoted
             }
         } else {
