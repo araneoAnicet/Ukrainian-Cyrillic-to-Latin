@@ -13,7 +13,7 @@ let alphabet = {
         'Х': 'Ch'
     },
     ioting: {
-        iotingSymbols: "аіуеиоАІУЕИО' \n\t",
+        iotingSymbols: "єЄюЮяЯїЇаіуеиоАІУЕИО' \n\t",
         lettersWhichCanBeIoted: 'єЄюЮяЯїЇ',
         twoLetters: {
             'є': {
