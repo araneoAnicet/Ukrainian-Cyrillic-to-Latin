@@ -68,7 +68,7 @@ let alphabet = {
 }
 
 function cyrillicToLatin(ukrainianText) {
-    if (typeof ukrainianText != String) {
+    if (typeof ukrainianText != 'string') {
         return undefined
     }
     var resultText = ''
@@ -95,7 +95,7 @@ function cyrillicToLatin(ukrainianText) {
         } else {
             if (alphabet.specialCyrillic.specialLetters.includes(ukrainianText[i])) {
                 resultText += alphabet.specialCyrillic[ukrainianText[i]]
-            } else if (ukrainianText[i] != 'ь' && ukrainianText[i] != "'")
+            } else if (!("ьЬ'".includes(ukrainianText[i])))
             resultText += ukrainianText[i]
         }
 
@@ -109,9 +109,10 @@ function cyrillicToLatin(ukrainianText) {
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-    console.log(`Got message from popup: ${request.doTranslation}`)
+    if (typeof request.doTranslation == 'boolean')
     if (request.doTranslation) {
-        
+        let stringOfDocument = document.documentElement.innerHTML
+
     }
 
 })
