@@ -1,4 +1,6 @@
-console.log('Extension is activated!')
+let stringOfOriginalDocument = document.documentElement.innerHTML
+var stringOfModifiedDocument = ''
+var documentHasBeenModified = false
 
 let alphabet = {
     cyrillicCommon: 'АаБбВвГгҐґДдЕеЖжЗзИиІіЙйКкЛлМмНнОоПпРрСсТтУуФфЦцЧчШш',
@@ -111,8 +113,13 @@ function cyrillicToLatin(ukrainianText) {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     if (typeof request.doTranslation == 'boolean')
     if (request.doTranslation) {
-        let stringOfDocument = document.documentElement.innerHTML
-
+        if (!documentHasBeenModified) {
+            stringOfModifiedDocument = cyrillicToLatin(stringOfOriginalDocument)
+            documentHasBeenModified = true
+        }
+        document.documentElement.innerHTML = stringOfModifiedDocument
+    } else {
+        document.documentElement.innerHTML = stringOfOriginalDocument
     }
 
 })
