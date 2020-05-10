@@ -7,6 +7,14 @@ and historical features of Ukrainian language. Latin based alphabet uses the com
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## Demo
+Controls:
+![1](https://user-images.githubusercontent.com/38670044/81511127-b3523580-931f-11ea-9629-f9e471835ae1.PNG)
+
+Result::
+
+![Demo transition](https://user-images.githubusercontent.com/38670044/81511159-e4cb0100-931f-11ea-91fc-fd01316a029c.png)
+
 
 ### Prerequisites
 
