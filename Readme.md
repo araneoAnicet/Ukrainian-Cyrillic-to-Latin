@@ -31,4 +31,4 @@ v1.0
 
 ## Authors
 
-* **Nikita Solomientsev** [PurpleBooth](https://github.com/araneoAnicet)
+* **Nikita Solomientsev** (https://github.com/araneoAnicet)
