@@ -1,5 +1,5 @@
 let translateBtn = document.getElementById('translate-btn')
-var btnIsActive = false
+let showOriginalBtn = document.getElementById('show-original-btn')
 
 function notifyTab(translationStatus) {
     if (typeof translationStatus != 'boolean') {
@@ -12,15 +12,9 @@ function notifyTab(translationStatus) {
 }
 
 translateBtn.onclick = function() {
-    if (btnIsActive) {
-        translateBtn.classList.remove('btn-danger')
-        translateBtn.classList.add('btn-success')
-        translateBtn.innerText = 'Translate!'
-    } else {
-        translateBtn.classList.remove('btn-success')
-        translateBtn.classList.add('btn-danger')
-        translateBtn.innerText = 'Show original'
-    }
-    btnIsActive = !btnIsActive
-    notifyTab(btnIsActive)
+    notifyTab(true)
+}
+
+showOriginalBtn.onclick = function() {
+    notifyTab(false)
 }
